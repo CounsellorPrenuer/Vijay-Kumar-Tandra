@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { client } from '@/sanity/client'
 import imageUrlBuilder from '@sanity/image-url'
 import Link from 'next/link'
+import PackagesSection from './PackagesSection'
 
 const builder = imageUrlBuilder(client)
 function urlFor(source: any) {
@@ -131,37 +132,7 @@ export default function Home() {
             <p className="mt-4 text-xl text-gray-600">Choose the perfect tier for your career journey.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {packages && packages.length > 0 ? (
-              packages.map((pkg: any) => (
-                <div key={pkg._id} className="bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100 flex flex-col">
-                  {pkg.image && <img src={urlFor(pkg.image).url()} alt={pkg.name} className="w-full h-auto object-cover" />}
-                  <div className="p-8 flex-1 flex flex-col">
-                    <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
-                    <div className="text-3xl font-extrabold text-blue-600 mb-6">{pkg.price}</div>
-                    <ul className="mb-8 space-y-3 flex-1">
-                      {pkg.features?.map((f: string, i: number) => (
-                        <li key={i} className="flex items-center text-gray-600">
-                          <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                          {f}
-                        </li>
-                      ))}
-                    </ul>
-                    <button className="w-full bg-blue-900 text-white py-3 rounded-lg font-bold hover:bg-blue-800 transition">Get Started</button>
-                  </div>
-                </div>
-              ))
-            ) : (
-              packageImages.map((src, i) => (
-                <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100 flex flex-col transform hover:-translate-y-2 transition duration-300">
-                  <img src={src} alt={`Mentoria Package ${i+1}`} className="w-full h-auto" />
-                  <div className="p-6">
-                    <button className="w-full bg-blue-900 text-white py-3 rounded-lg font-bold hover:bg-blue-800 transition mt-4">Inquire Now</button>
-                  </div>
-                </div>
-              ))
-            )}
-          </div>
+          <PackagesSection sanityPackages={packages} />
         </div>
       </section>
 
