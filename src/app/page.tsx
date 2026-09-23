@@ -54,7 +54,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-20 items-center">
             <div className="flex-shrink-0 flex items-center">
-              <img src="/logo.jpg" alt="Logo" className="h-12 w-auto object-contain rounded-md" />
+              <img src="/Vijay-Kumar-Tandra/logo.jpg" alt="Logo" className="h-12 w-auto object-contain rounded-md" />
               <span className="ml-3 font-bold text-2xl tracking-tight text-blue-900">{siteName}</span>
             </div>
             <div className="hidden md:flex space-x-8">
@@ -157,7 +157,7 @@ export default function Home() {
       <footer id="contact" className="bg-gray-900 text-gray-300 py-16">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <img src="/logo.jpg" alt="Logo" className="h-16 bg-white p-2 rounded mb-4" />
+            <img src="/Vijay-Kumar-Tandra/logo.jpg" alt="Logo" className="h-16 bg-white p-2 rounded mb-4" />
             <p className="text-sm">Empowering individuals through expert career and academic guidance.</p>
           </div>
           <div>
