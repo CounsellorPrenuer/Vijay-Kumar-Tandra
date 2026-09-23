@@ -208,6 +208,57 @@ export default function PackagesSection({ sanityPackages }: { sanityPackages: an
           </div>
         ))}
       </div>
+
+      <div className="mt-20 border-t pt-16">
+        <h3 className="text-3xl font-bold text-center text-blue-900 mb-4">Want To Customise Your Mentorship Plan?</h3>
+        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          If you want to subscribe to specific services from Mentoria that resolve your career challenges, you can choose one or more of the following:
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            {
+              title: 'CV Building',
+              price: '₹2000',
+              desc: 'Is your CV making a great first impression on your behalf? Our HR experts will help you build the kind of CV that stands out from the crowd and increases your chances of getting interview calls.'
+            },
+            {
+              title: 'LinkedIn Profile Building',
+              price: '₹2000',
+              desc: 'Revamp your LinkedIn profile with recommendations from recruitment experts to showcase your career journey and increase your chances of interview calls.'
+            },
+            {
+              title: 'LinkedIn Profile + CV Building',
+              price: '₹3500',
+              desc: 'Build the kind of profile recruiters would love to spend time on. Get your CV and LinkedIn profile built by our HR/Recruitment experts.'
+            },
+            {
+              title: 'Job Application Strategy',
+              price: '₹4000',
+              desc: 'Build the right pipeline for job interviews through a customised job application tracker with information on companies, job postings and steps you need to follow to land your dream job.'
+            },
+            {
+              title: 'Career Report',
+              price: '₹2500',
+              desc: 'Get a detailed report of your psychometric assessment for a scientific analysis of your interests, personality and abilities. Find out where your interests lie and which future paths you can potentially consider.'
+            },
+            {
+              title: 'Career Report + Career Counselling',
+              price: '₹4000',
+              desc: 'Connect with India\'s top career coaches to analyse your psychometric report, get a detailed action plan for your development areas and shortlist the top three career paths you\'re most likely to enjoy and excel at.'
+            }
+          ].map((addon, idx) => (
+            <div key={idx} className="bg-white border rounded-xl p-6 shadow-sm flex flex-col hover:shadow-md transition">
+              <h4 className="text-xl font-bold text-blue-900 mb-2">{addon.title}</h4>
+              <div className="text-lg font-bold text-gray-800 mb-3">{addon.price}</div>
+              <p className="text-sm text-gray-600 mb-6 flex-1">{addon.desc}</p>
+              <button className="w-full py-2 bg-blue-100 text-blue-700 rounded font-bold hover:bg-blue-200 transition">
+                BUY NOW
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
